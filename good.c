@@ -40,10 +40,6 @@ int fun()
 	return 0;
 }
 
-
-
-
-
 int main(){
 	clock_t t;
     t = clock();
