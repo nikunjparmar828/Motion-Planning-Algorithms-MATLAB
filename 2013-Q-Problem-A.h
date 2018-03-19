@@ -1,6 +1,5 @@
 #import <CodeJam-Helper.h>
 
-
 int main(int argc, char *argv[]) {
     NSAutoreleasePool * pool = [NSAutoreleasePool new];
     result = [[NSMutableString new] autorelease];
