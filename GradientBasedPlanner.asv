@@ -1,0 +1,38 @@
+function route = GradientBasedPlanner (f, start_coords, end_coords)
+
+
+[gx, gy] = gradient (-f);
+% figure;
+% mesh(f);
+% title('f');
+% 
+% figure;
+% mesh(-f);
+% title('-f');
+% 
+% figure;
+% mesh(gx);
+% title('gx');
+% figure;
+% mesh(gy);
+% title('gy');
+
+route = start_coords;
+current = start_coords;
+
+while true
+    
+    if(norm(end_coords - current) < 2)
+     break;
+    end
+
+    [p1,p2] = [gx( round(current(2)), round(current(1)) ), gy( round(current(2)), round(current(1)) )];
+    delta = [p1, p2];
+
+    mag = delta/norm(delta);
+    P1 = P1 + [mag(1) mag(2)];
+    route = [route; P1];
+
+end
+disp("All good");
+end
